@@ -25,3 +25,16 @@ phi_right = np.array([8, 21, 11, 5])
 # linear interpolation
 phi[:, 0] = np.interp(y, y_left, phi_left)
 phi[:, -1] = np.interp(y, y_right, phi_right)
+
+# interpolate top and bottom boundaries now
+
+# bottom boundary (y=0)
+x_bottom = np.array([0, 10, 25, 50])
+phi_bottom = np.array([7, 14, 10, 19])
+# top boundary (y=Ly)
+x_top = ([0, 10, 25, 50])
+phi_top = ([8, 21, 11, 5])
+
+# linear interpolation
+phi[0, :] = np.interp(x, x_bottom, phi_bottom)
+phi[-1, :] = np.interp(x, x_top, phi_top)
